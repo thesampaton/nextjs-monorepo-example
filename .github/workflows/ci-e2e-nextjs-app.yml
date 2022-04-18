@@ -68,10 +68,9 @@ jobs:
             ${{ github.workspace }}/.cache
             ${{ github.workspace }}/**/tsconfig.tsbuildinfo
             ${{ github.workspace }}/**/.eslintcache
-
-          key: ${{ runner.os }}-nextjs-web-app-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('apps/web-app/src/**.[jt]sx?', 'apps/web-app/src/**.json') }}
+          key: ${{ runner.os }}-nextjs-app-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('apps/nextjs-app/src/**.[jt]sx?', 'apps/nextjs-app/src/**.json') }}
           restore-keys: |
-            ${{ runner.os }}-nextjs-web-app-${{ hashFiles('**/yarn.lock') }}-
+            ${{ runner.os }}-nextjs-app-${{ hashFiles('**/yarn.lock') }}-
 
       - name: Start database
         working-directory: packages/db-main-prisma
